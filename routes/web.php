@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-{{dd("Portfolio de Hugo BUFFARD en construction ..."); }}
-    return view('welcome');
+    return view('maintenance');
 });
