@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>DevFolio Bootstrap Portfolio Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+  <title>Hugo BUFFARD</title>
+
+
   <!-- Favicons -->
-  <link href="{{asset('front/assets/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('front/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="{{asset('front/assets/img/maintenance.gif')}}" rel="icon">
+  <link href="{{asset('front/assets/img/maintenance.gif')}}" rel="apple-touch-icon">
 
   <!-- Vendor CSS Files -->
   <link href="{{asset('front/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
