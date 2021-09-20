@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('maintenance');
-});
+require __DIR__.'/auth.php';
+use App\Http\Controllers\FrontController;
+
+Route::get('/', [FrontController::class, 'index'])->name('front');
+
+Route::get('/mention-legales', [FrontController::class, 'ml'])->name('ml');
+
+Route::get('/backYbgur', function () {
+    return view('back');
+})->middleware(['auth'])->name('backYbgur');
+
+

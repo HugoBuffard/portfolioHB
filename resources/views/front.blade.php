@@ -393,7 +393,7 @@
         <div class="col-sm-12">
           <div class="copyright-box">
             <p class="copyright">&copy; Copyright 2021 - <strong>Hugo BUFFARD</strong>. Tous droits réservés.</p>
-            <a>Mentions légales</a>
+            <a href="{{ route('ml') }}">Mentions légales</a>
             <div class="credits">
               <!--
               All the links in the footer should remain intact.
