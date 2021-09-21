@@ -23,5 +23,3 @@ Route::get('/mention-legales', [FrontController::class, 'ml'])->name('ml');
 Route::get('/backYbgur', function () {
     return view('back');
 })->middleware(['auth'])->name('backYbgur');
-
-
