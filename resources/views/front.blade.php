@@ -49,7 +49,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="accueil" class="hero route bg-image" style="background-image: url(front/assets/img/fond11.jpg)">
+  <div id="accueil" class="hero route bg-image" style="background-image: url(front/assets/img/fond1.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
