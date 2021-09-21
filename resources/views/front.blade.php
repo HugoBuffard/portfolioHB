@@ -48,7 +48,7 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
+  <!-- ======= BIENVENUE ======= -->
   <div id="accueil" class="hero route bg-image" style="background-image: url(front/assets/img/fond1.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
@@ -64,7 +64,7 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
+    <!-- ======= A PROPOS ======= -->
     <section id="aPropos" class="about-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -83,7 +83,6 @@
                       <p><span class="title-s">Profil: </span> <span>Développeur Web</span></p>
                       <p><span class="title-s">Email: </span> <span>hugobuffard@live.fr</span></p>
                       <p><span class="title-s">Téléphone: </span> <span>06 33 74 04 51</span></p>
-
                     </div>
                   </div>
                   <div class="col-12 d-flex justify-content-center">
@@ -118,8 +117,9 @@
         </div>
       </div>
     </section><!-- End About Section -->
-    <!--/ Section Services Star /-->
-    <section id="competences" class="services-mf route">
+
+    <!-- ======= COMPÉTENCES ======= -->
+    <section id="competences" class="sect-pt4 route">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -212,9 +212,8 @@
     </section>
     <!--/ Section Services End /-->
 
-
-    <!-- ======= Counter Section ======= -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(assets/img/counters-bg.jpg)">
+    <!-- ======= SECTION ======= -->
+    <div class="paralax-mf" style="background-image: url(assets/img/counters-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container position-relative">
         <div class="row">
@@ -253,9 +252,9 @@
           </div>
         </div>
       </div>
-    </div><!-- End Counter Section -->
+    </div><!-- End Section -->
 
-    <!-- ======= Projets Section ======= -->
+    <!-- ======= PROJETS ======= -->
     <section id="projets" class="portfolio-mf sect-pt4 route">
       <div class="container">
         <div class="row">
@@ -301,8 +300,7 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-
-    <!-- ======= Contact Section ======= -->
+    <!-- ======= ME CONTACTER ======= -->
     <section id="meContacter" class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
       <div class="overlay-mf"></div>
       <div class="container">
@@ -393,7 +391,6 @@
         <div class="col-sm-12">
           <div class="copyright-box">
             <p class="copyright">&copy; Copyright 2021 - <strong>Hugo BUFFARD</strong>. Tous droits réservés.</p>
-            <a href="{{ route('ml') }}">Mentions légales</a>
             <div class="credits">
               <!--
               All the links in the footer should remain intact.
@@ -403,6 +400,7 @@
               -->
               Thème par <a href="https://bootstrapmade.com/">BootstrapMade</a>
             </div>
+            <a href="{{ route('ml') }}"><strong>| Mentions légales |</strong></a>
           </div>
         </div>
       </div>
@@ -427,5 +425,4 @@
   <script src="{{asset('front/assets/js/main.js')}}"></script>
 
 </body>
-
 </html>
