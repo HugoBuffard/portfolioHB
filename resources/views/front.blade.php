@@ -49,7 +49,7 @@
   </header><!-- End Header -->
 
   <!-- ======= BIENVENUE ======= -->
-  <div id="accueil" class="hero route bg-image" style="background-image: url(front/assets/img/fond1.jpg)">
+  <div id="accueil" class="hero route bg-image" style="background-image: url(front/assets/img/fond9.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
@@ -273,17 +273,17 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="front/assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+              <a href="front/assets/img/fond9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
-                  <img src="front/assets/img/work-5.jpg" alt="" class="img-fluid">
+                  <img src="front/assets/img/fond9.jpg" alt="" class="img-fluid">
                 </div>
               </a>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
-                    <h2 class="w-title">Studio Big Bang</h2>
+                    <h2 class="w-title">Portfolio</h2>
                     <div class="w-more">
-                      <span class="w-ctegory">2010</span>
+                      <span class="w-ctegory">2021</span>
                     </div>
                   </div>
                   <div class="col-sm-4">
