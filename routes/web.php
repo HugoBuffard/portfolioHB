@@ -15,11 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 require __DIR__.'/auth.php';
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\BackController;
 
+// Route::get('/', function () {
+//     return view('maintenance');
+// });
+
+//FRONT
 Route::get('/', [FrontController::class, 'index'])->name('front');
 
 Route::get('/mention-legales', [FrontController::class, 'ml'])->name('ml');
 
-Route::get('/backYbgur', function () {
-    return view('back');
-})->middleware(['auth'])->name('backYbgur');
+//BACK
+Route::get('/backYbgur', [BackController::class, 'index'])
+->middleware(['auth'])
+->name('back');
+
+
+
+
