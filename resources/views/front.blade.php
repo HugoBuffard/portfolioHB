@@ -242,7 +242,7 @@
           <div class="col-sm-4 col-lg-4">
             <div class="counter-box pt-4 pt-md-0">
               <div class="counter-ico">
-                <span class="ico-circle"><i class="far fa-coffee"></i></span>
+                <span class="ico-circle"><i class="fas fa-coffee"></i></span>
               </div>
               <div class="counter-num">
                 <p class="counter">∞</p>
