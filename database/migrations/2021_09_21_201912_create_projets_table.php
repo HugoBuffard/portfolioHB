@@ -17,7 +17,7 @@ class CreateProjetsTable extends Migration
             $table->id();
             $table->string('titre');
             $table->text('description');
-            $table->integer('date');
+            $table->integer('annee');
             $table->boolean('afficher');
             $table->timestamps();
         });

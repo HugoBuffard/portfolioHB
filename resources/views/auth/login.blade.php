@@ -47,7 +47,7 @@
                     </a>
                 @endif
 
-                <x-button class="ml-3">
+                <x-button class="ml-3" style="background-color: #0078ff">
                     {{ __('Se connecter') }}
                 </x-button>
             </div>
