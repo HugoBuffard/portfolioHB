@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | Dashboard 2</title>
+  <title>PortolioHB</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -13,8 +13,15 @@
   <link rel="stylesheet" href="{{asset('back/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('back/dist/css/adminlte.min.css')}}">
+<!-- Toggle -->
+  <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
+<!-- CK Editor JS -->
+<script src="https://cdn.ckeditor.com/ckeditor5/29.2.0/classic/ckeditor.js"></script>
+<!-- DataTable -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
   <!-- Preloader -->
@@ -208,25 +215,24 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="{{asset('back/plugins/jquery/jquery.min.js')}}"></script>
+
+@yield('script')
+
+
+<!-- DataTable -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
 <!-- Bootstrap -->
 <script src="{{asset('back/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- overlayScrollbars -->
 <script src="{{asset('back/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('back/dist/js/adminlte.js')}}"></script>
+<!-- Toggle -->
+<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
 <!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="{{asset('back/plugins/jquery-mousewheel/jquery.mousewheel.js')}}"></script>
-<script src="{{asset('back/plugins/raphael/raphael.min.js')}}"></script>
-<script src="{{asset('back/plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
-<script src="{{asset('back/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
 <!-- ChartJS -->
 <script src="{{asset('back/plugins/chart.js/Chart.min.js')}}"></script>
 
-<!-- AdminLTE for demo purposes -->
-<script src="{{asset('back/dist/js/demo.js')}}"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="{{asset('back/dist/js/pages/dashboard2.js')}}"></script>
 </body>
 </html>

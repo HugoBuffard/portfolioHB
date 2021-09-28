@@ -19,5 +19,9 @@
         "postcss": "^8.2.1",
         "postcss-import": "^12.0.1",
         "tailwindcss": "^2.0.2"
+    },
+    "dependencies": {
+        "@jkryszto/mdb-for-laravel": "^1.0.0",
+        "mdb-ui-kit": "^3.9.0"
     }
 }
