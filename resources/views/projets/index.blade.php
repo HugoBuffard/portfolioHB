@@ -1,4 +1,4 @@
-@extends('back')
+@extends('templateBack')
 
 @section('titre')
     Mes projets
@@ -41,6 +41,7 @@
                         <th>Titre</th>
                         <th>Année</th>
                         <th>Afficher</th>
+                        <th>Options</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,11 +50,30 @@
                             <th>{{ $p->id }}</th>
                             <td>{{ $p->titre }}</td>
                             <td>{{ $p->annee }}</td>
-                            @if ($p->afficher==1)
-                            <td><span class="badge badge-success">OUI</span></td>
+                            @if ($p->afficher == 1)
+                                <td><span class="badge badge-success">OUI</span></td>
                             @else
-                            <td><span class="badge badge-danger">NON</span></td>
+                                <td><span class="badge badge-danger">NON</span></td>
                             @endif
+                            <td>
+                                <div style="display: inline-flex;">
+                                    <form action="{{ route('projets.edit', $p) }}" method="post">
+                                        @csrf
+                                        @method('GET')
+                                        <button type="submit" rel="tooltip" class="btn  btn-linght btn-round">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </form>
+                                    <form action="{{ route('projets.destroy', $p) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" rel="tooltip" class="btn  btn-linght btn-round"
+                                            onclick="return confirm('Es tu sur de vouloir supprimer ce projet ?')">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>

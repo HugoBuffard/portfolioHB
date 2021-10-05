@@ -1,4 +1,4 @@
-@extends('back')
+@extends('templateBack')
 
 @section('titre')
     Création d'un projet
@@ -23,16 +23,16 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="titre">Titre</label>
-                    <input type="text" class="form-control" id="titre" name="titre">
+                    <input type="text" class="form-control" id="titre" name="titre" value="{{ old('titre') }}">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="annee">Année</label>
-                    <input type="number" class="form-control" id="annee" name="annee">
+                    <input type="number" class="form-control" id="annee" name="annee" value="{{ old('annee') }}">
                 </div>
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea class="form-control" id="description" name="description"></textarea>
+                <textarea class="form-control" id="description" name="description">{{ old('description') }}</textarea>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
@@ -43,7 +43,7 @@
                     <label for="afficher">Afficher</label>
                     <br>
                     <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="danger" data-on="OUI"
-                        data-off="NON" data-size="sm" id="afficher" name="afficher" value="oui" checked>
+                        data-off="NON" data-size="sm" id="afficher" name="afficher" value="OUI" checked>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Créer</button>

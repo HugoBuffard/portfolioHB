@@ -7,8 +7,6 @@ use Illuminate\Support\Facades\Validator;
 use App\Models\Projet;
 use App\Models\Image;
 use Illuminate\Support\Str;
-use Illuminate\Http\UploadedFile;
-use File;
 
 class ProjetController extends Controller
 {
@@ -20,6 +18,7 @@ class ProjetController extends Controller
     public function index()
     {
         $projets = Projet::all();
+        
         return view('projets.index')->with('projets', $projets);
     }
 
@@ -46,7 +45,6 @@ class ProjetController extends Controller
             'annee'=>'required',
             'description'=>'required',
             'images'=>'required',
-            'afficher'=>'required',
           ]);
           if ($validator->fails()) {
             return redirect()->route('projets.create')->withErrors($validator)->withInput();
@@ -56,10 +54,10 @@ class ProjetController extends Controller
         $projet->titre = $request->input('titre');
         $projet->annee = $request->input('annee');
         $projet->description = $request->input('description');
-        if ($request->input('afficher')=="oui") {
+        if ($request->input('afficher')=="OUI") {
             $projet->afficher = true;
         }
-        if ($request->input('afficher')=="non") {
+        if ($request->input('afficher')==null) {
             $projet->afficher = false;
         }
         $projet->save();
@@ -82,25 +80,14 @@ class ProjetController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Projet $projet)
     {
-        //
+        return view('projets.edit')->with('projet', $projet);
     }
 
     /**
@@ -112,7 +99,56 @@ class ProjetController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),[
+            'titre'=>'required',
+            'annee'=>'required',
+            'description'=>'required',
+          ]);
+          if ($validator->fails()) {
+            return redirect()->route('projets.edit')->withErrors($validator)->withInput();
+          }
+        
+          $projet = Projet::find($id);
+          $projet->titre = $request->input('titre');
+          $projet->annee = $request->input('annee');
+          $projet->description = $request->input('description');
+
+        if ($request->input('afficher')=="OUI") {
+            $projet->afficher = true;
+        }
+        if ($request->input('afficher')==null) {
+            $projet->afficher = false;
+        }
+        $projet->save();
+
+        if (is_array($request->images) || is_object($request->images))
+{
+        foreach ($request->images as $i) {
+            $image = new Image;
+            $image_upload = $i;
+            $rand = Str::random(10);
+            if ($image_upload != NULL) {
+                $image_nommage = date('Y-m-d') . '-' . $rand . '-' . $image_upload->getClientOriginalName();
+                $image_get = 'images/' . $image_nommage;
+                $image_upload->move('images', $image_nommage);
+                $image->nom = $image_get;
+              }
+              $image->projet_id = $projet->id;
+              $image->save();
+        }
+    }
+    if (is_array($request->imagesSupp) || is_object($request->imagesSupp))
+    {
+        foreach ($request->imagesSupp as $iSupp) {
+            $imageSupp = Image::find($iSupp);
+            unlink(public_path($imageSupp->nom));
+            $imageSupp->delete();
+
+        }
+    }
+
+        return redirect()->route('projets.index')->with('warning', 'Modification réussite !');
+        
     }
 
     /**
@@ -121,8 +157,15 @@ class ProjetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Projet $projet)
     {
-        //
+        foreach ($projet->images as $i) {
+            if (isset($i->nom)) {
+                unlink(public_path($i->nom));
+            }
+        }
+          $projet->delete();
+
+          return redirect()->route('projets.index')->with('danger','Suppression réussite !');
     }
 }
