@@ -335,11 +335,11 @@
                                                                   @foreach ($p->images as $index => $i)
                                                                   @if ($index == 0)
                                                                   <div class="carousel-item active">
-                                                                    <img class="d-block w-100" style="transform: none !important;" src="{{ asset($i->nom) }}">
+                                                                    <img class="d-block w-100" style="transform: none !important; width:766px ; height:355px ;" src="{{ asset($i->nom) }}">
                                                                   </div>
                                                                   @else
                                                                   <div class="carousel-item">
-                                                                    <img class="d-block w-100" style="transform: none !important;" src="{{ asset($i->nom) }}">
+                                                                    <img class="d-block w-100" style="transform: none !important; width:766px ; height:355px ;;" src="{{ asset($i->nom) }}">
                                                                   </div>
                                                                   @endif
                                                                   @endforeach
