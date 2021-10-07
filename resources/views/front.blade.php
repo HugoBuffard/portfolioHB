@@ -387,38 +387,32 @@
                                             </h5>
                                         </div>
                                         <div>
-                                            <form action="forms/contact.php" method="post" role="form"
-                                                class="php-email-form">
+                                            <form action="{{ route('storeMessage') }}" method="post" role="form" id="messageForm">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
-                                                            <input type="text" name="name" class="form-control"
-                                                                id="name" placeholder="Votre Nom" required>
+                                                            <input type="text" name="nom" class="form-control"
+                                                                id="nomForm" placeholder="Votre Nom" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
                                                             <input type="email" class="form-control" name="email"
-                                                                id="email" placeholder="Votre Email" required>
+                                                                id="emailForm" placeholder="Votre Email" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
-                                                            <input type="text" class="form-control" name="subject"
-                                                                id="subject" placeholder="Sujet" required>
+                                                            <input type="text" class="form-control" name="sujet"
+                                                                id="sujetForm" placeholder="Sujet" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12 mb-3">
                                                         <div class="form-group">
                                                             <textarea class="form-control" name="message" rows="5"
-                                                                placeholder="Message" required></textarea>
+                                                                placeholder="Message" id="messageForm" required></textarea>
                                                         </div>
-                                                    </div>
-                                                    <div class="col-md-12 text-center my-3">
-                                                        <div class="loading">Loading</div>
-                                                        <div class="error-message"></div>
-                                                        <div class="sent-message">Your message has been sent. Thank
-                                                            you!</div>
                                                     </div>
                                                     <div class="col-md-12 text-center">
                                                         <button type="submit"
@@ -494,11 +488,9 @@
     <div id="preloader"></div>
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
-
+    <!-- JQuery -->
+    <script src="{{ asset('front/assets/js/jquery-3.6.0.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
@@ -518,7 +510,7 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('front/assets/js/main.js') }}"></script>
+    <script src="{{ asset('front/assets/js/ajax.js') }}"></script>
 
 </body>
-
 </html>

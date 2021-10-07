@@ -53,20 +53,33 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        @if (App\Models\Message::where('traiter', false)->count() > 0)
+                        <span class="badge badge-warning navbar-badge">{{ App\Models\Message::where('traiter', false)->count() }}</span>
+                        @endif
                     </a>
+                    @if (App\Models\Message::where('traiter', false)->count() > 0)
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                         <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2 )
+                            <i class="fas fa-envelope mr-2"></i> {{ App\Models\Message::where('traiter', false)->count() }} nouveau message.
+                            @else
+                            <i class="fas fa-envelope mr-2"></i> {{ App\Models\Message::where('traiter', false)->count() }} nouveaux messages.
+                            @endif
                         </a>
+                        @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2 )
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                        <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir le nouveau message</a>
+                        @else
+                        <div class="dropdown-divider"></div>
+                        <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir les nouveaux messages</a>
+                        @endif
                     </div>
+                    @endif
                 </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}">
                         <i class="fas fa-sign-out-alt"></i>
@@ -127,7 +140,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/widgets.html" class="nav-link">
+                            <a href="{{ route('messages.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-envelope-square"></i>
                                 <p>
                                     Messages

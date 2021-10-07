@@ -28,6 +28,8 @@ Route::get('/', [FrontController::class, 'index'])->name('front');
 
 Route::get('/mention-legales', [FrontController::class, 'ml'])->name('ml');
 
+Route::post('/creationMessage', [FrontController::class, 'storeMessage'])->name('storeMessage');
+
 //BACK
 Route::middleware([auth::class])->group(function () {
 

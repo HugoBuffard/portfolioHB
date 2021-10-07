@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Projet;
+use App\Models\Message;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class FrontController extends Controller
 {
@@ -17,5 +19,30 @@ class FrontController extends Controller
 
     public function ml(){
         return view('mentionsLegales');
+    }
+
+    public function storeMessage(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'nom'=>'required',
+            'email'=>'required|email',
+            'sujet'=>'required',
+            'message'=>'required',
+          ]);
+          if ($validator->fails()) {
+            return response()->json(['status' => 0, 'error' =>$validator->errors()->toArray()]);
+          }else {
+              $message = new Message;
+              $message->nom = $request->input('nom');
+              $message->email = $request->input('email');
+              $message->sujet = $request->input('sujet');
+              $message->message = $request->input('message');
+              $message->traiter = false;
+              $message->save();
+              return response()->json([
+                'status'=>1,
+                'msg'=>'Votre message à bien été envoyé !',
+              ]);
+          }
     }
 }
