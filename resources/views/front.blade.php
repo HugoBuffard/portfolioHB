@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('front/assets/img/favicon.png') }}" rel="icon">
-    <link href="{{ asset('front/assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('front/assets/img/logo HB_bleu.png') }}" rel="icon">
+    <link href="{{ asset('front/assets/img/logo HB_bleu.png') }}" rel="apple-touch-icon">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -32,7 +32,7 @@
 
             <!-- <h1 class="logo"><a href="index.html">DevFolio</a></h1> -->
             <!-- Uncomment below if you prefer to use an image logo -->
-            <a href="index.html" class="logo"><img src="front/assets/img/counters-bg.jpg" alt=""
+            <a href="index.html" class="logo"><img src="front/assets/img/logo HB_blanc.png" alt=""
                     class="img-fluid"></a>
 
             <nav id="navbar" class="navbar">

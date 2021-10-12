@@ -59,7 +59,7 @@
                             @endif
                             <td>
                                 <div style="display: inline-flex;">
-                                    <form action="{{ route('messages.edit', $m) }}" method="post">
+                                    <form action="{{ route('messages.edit', $m->id) }}" method="post">
                                         @csrf
                                         @method('GET')
                                         <button type="submit" rel="tooltip" class="btn  btn-linght btn-round">

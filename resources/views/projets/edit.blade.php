@@ -46,7 +46,7 @@
                         <br>
                         @if ($projet->afficher == true)
                             <input type="checkbox" data-toggle="toggle" data-onstyle="success" data-offstyle="danger"
-                                data-on="OUI" data-off="NON" data-size="sm" id="afficher" name="afficher" value="oui"
+                                data-on="OUI" data-off="NON" data-size="sm" id="afficher" name="afficher" value="OUI"
                                 checked>
                         @endif
                         @if ($projet->afficher == false)

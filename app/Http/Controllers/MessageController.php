@@ -28,7 +28,8 @@ class MessageController extends Controller
      */
     public function edit($id)
     {
-        //
+        $message = Message::find($id);
+        return view('messages.edit')->with('message', $message);
     }
 
     /**
@@ -40,7 +41,15 @@ class MessageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $message = Message::find($id);
+        if ($request->input('traiter')=="OUI") {
+            $message->traiter = true;
+        }
+        if ($request->input('traiter')==null) {
+            $message->traiter = false;
+        }
+        $message->save();
+        return redirect()->route('messages.index')->with('warning', 'Modification réussite !');
     }
 
     /**
