@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="{{ asset('front/assets/img/logo HB_bleu.png') }}" rel="icon">
-    <link href="{{ asset('front/assets/img/logo HB_bleu.png') }}" rel="apple-touch-icon">
+    <link href="{{ asset('front/assets/img/logo HB_noir.png') }}" rel="icon">
+    <link href="{{ asset('front/assets/img/logo HB_noir.png') }}" rel="apple-touch-icon">
 
     <!-- Vendor CSS Files -->
     <link href="{{ asset('front/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -82,13 +82,13 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6 col-md-7">
-                                            <p><span class="title-s">Nom: </span> <span>Hugo BUFFARD</span></p>
-                                            <p><span class="title-s">Profil: </span> <span>Développeur Web</span>
+                                            <p><span class="title-s">Nom : </span> <span>Hugo BUFFARD</span></p>
+                                            <p><span class="title-s">Profil : </span> <span>Développeur Web</span>
                                             </p>
-                                            <p><span class="title-s">Email: </span>
+                                            <p><span class="title-s">Email : </span>
                                                 <span>hugobuffard@live.fr</span>
                                             </p>
-                                            <p><span class="title-s">Téléphone: </span> <span>06 33 74 04
+                                            <p><span class="title-s">Téléphone : </span> <span>06 33 74 04
                                                     51</span></p>
                                         </div>
                                     </div>
@@ -107,15 +107,18 @@
                                             </h5>
                                         </div>
                                         <p class="lead">
-                                            Bonjour, je m’appelle Hugo BUFFARD.
+                                            Bonjour, moi c’est Hugo,
+                                            je prends mon café sans sucre, car j’aime mettre mon grain dans les projets
+                                            bien corsés.
                                         </p>
                                         <p class="lead" style="text-align: justify;">
                                             A la recherche d’un nouveau poste, je suis diplômé d’une <a
                                                 href="http://www.pasteurmontroland.com/formation/3/27">Licence ASI
-                                                (Administrateur de Système d’Information)</a> que j’ai pu effectuer au
+                                                (Administrateur de Système d’Information)</a> que j’ai effectué au
                                             lycée Pasteur Mont Roland à Dole.
-                                            Après avoir découvert différentes facettes dans l’informatique, c’est dans
-                                            le web que j’ai décidé de me diriger.
+                                            Après avoir filtré différentes facettes dans l’informatique, c’est le web
+                                            qui a eu une saveur plus particulière pour moi, et c’est donc dans cette
+                                            branche que j’ai décidé de performer.
                                             Réalisant différents projets en cours et en entreprise j’ai pu obtenir les
                                             compétences pour réaliser un projet à sa mise en production.
                                         </p>
@@ -243,7 +246,7 @@
                     <div class="col-sm-4 col-lg-4">
                         <div class="counter-box counter-box pt-4 pt-md-0">
                             <div class="counter-ico">
-                                <span class="ico-circle"><i class="bi bi-check"></i></span>
+                                <span class="ico-circle"><i class="fas fa-passport" style="margin-top:15px;"></i></span>
                             </div>
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="{{ $NbProjets }}"
@@ -255,7 +258,7 @@
                     <div class="col-sm-4 col-lg-4">
                         <div class="counter-box pt-4 pt-md-0">
                             <div class="counter-ico">
-                                <span class="ico-circle"><i class="bi bi-journal-richtext"></i></span>
+                                <span class="ico-circle"><i class="fas fa-address-book" style="margin-top:15px;"></i></span>
                             </div>
                             <div class="counter-num">
                                 <p data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
@@ -267,7 +270,7 @@
                     <div class="col-sm-4 col-lg-4">
                         <div class="counter-box pt-4 pt-md-0">
                             <div class="counter-ico">
-                                <span class="ico-circle"><i class="fas fa-coffee"></i></span>
+                                <span class="ico-circle"><i class="fas fa-coffee" style="margin-top:15px;"></i></span>
                             </div>
                             <div class="counter-num">
                                 <p class="counter">∞</p>
@@ -300,7 +303,8 @@
                         <div class="col-md-4">
                             <div class="work-box">
                                 <div class="work-img">
-                                    <img src="{{ asset($p->images->first()->nom) }}" alt="" class="img-fluid" style="width:420px ; height:195px ;">
+                                    <img src="{{ asset($p->images->first()->nom) }}" alt="" class="img-fluid"
+                                        style="width:420px ; height:195px ;">
                                 </div>
                                 <div class="work-content">
                                     <div class="row">
@@ -312,49 +316,62 @@
                                         </div>
                                         <div class="col-3">
                                             <div class="w-like">
-                                              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#modalProjet{{$p->id}}">
-                                               <i class="bi bi-plus-circle"></i>
-                                              </button>
+                                                <button type="button" class="btn btn-outline-primary"
+                                                    data-toggle="modal" data-target="#modalProjet{{ $p->id }}">
+                                                    <i class="bi bi-plus-circle"></i>
+                                                </button>
                                                 <!-- Modal -->
-                                                <div class="modal fade" id="modalProjet{{$p->id}}" tabindex="-1"
-                                                    role="dialog" aria-labelledby="exampleModalLabel"
+                                                <div class="modal fade" id="modalProjet{{ $p->id }}"
+                                                    tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                                                     aria-hidden="true">
                                                     <div class="modal-dialog modal-lg" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <h5 class="modal-title" id="exampleModalLabel">
-                                                                    {{$p->titre}}</h5>
+                                                                    {{ $p->titre }}</h5>
                                                                 <a type="button" class="close"
-                                                                    data-dismiss="modal" aria-label="Close" style="color:#1e1e1e;">
+                                                                    data-dismiss="modal" aria-label="Close"
+                                                                    style="color:#1e1e1e;">
                                                                     <i aria-hidden="true" class="bi bi-x-lg"></i>
                                                                 </a>
                                                             </div>
                                                             <div class="modal-body">
-                                                              <div id="carouselId{{$p->id}}" class="carousel slide" data-ride="carousel">
-                                                                <div class="carousel-inner">
-                                                                  @foreach ($p->images as $index => $i)
-                                                                  @if ($index == 0)
-                                                                  <div class="carousel-item active">
-                                                                    <img class="d-block w-100" style="transform: none !important; width:766px ; height:355px ;" src="{{ asset($i->nom) }}">
-                                                                  </div>
-                                                                  @else
-                                                                  <div class="carousel-item">
-                                                                    <img class="d-block w-100" style="transform: none !important; width:766px ; height:355px ;;" src="{{ asset($i->nom) }}">
-                                                                  </div>
-                                                                  @endif
-                                                                  @endforeach
+                                                                <div id="carouselId{{ $p->id }}"
+                                                                    class="carousel slide" data-ride="carousel">
+                                                                    <div class="carousel-inner">
+                                                                        @foreach ($p->images as $index => $i)
+                                                                            @if ($index == 0)
+                                                                                <div class="carousel-item active">
+                                                                                    <img class="d-block w-100"
+                                                                                        style="transform: none !important; width:766px ; height:355px ;"
+                                                                                        src="{{ asset($i->nom) }}">
+                                                                                </div>
+                                                                            @else
+                                                                                <div class="carousel-item">
+                                                                                    <img class="d-block w-100"
+                                                                                        style="transform: none !important; width:766px ; height:355px ;;"
+                                                                                        src="{{ asset($i->nom) }}">
+                                                                                </div>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    </div>
+                                                                    <a class="carousel-control-prev"
+                                                                        href="#carouselId{{ $p->id }}"
+                                                                        role="button" data-slide="prev">
+                                                                        <span class="carousel-control-prev-icon"
+                                                                            aria-hidden="true"></span>
+                                                                        <span class="sr-only">Previous</span>
+                                                                    </a>
+                                                                    <a class="carousel-control-next"
+                                                                        href="#carouselId{{ $p->id }}"
+                                                                        role="button" data-slide="next">
+                                                                        <span class="carousel-control-next-icon"
+                                                                            aria-hidden="true"></span>
+                                                                        <span class="sr-only">Next</span>
+                                                                    </a>
                                                                 </div>
-                                                                <a class="carousel-control-prev" href="#carouselId{{$p->id}}" role="button" data-slide="prev">
-                                                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                                  <span class="sr-only">Previous</span>
-                                                                </a>
-                                                                <a class="carousel-control-next" href="#carouselId{{$p->id}}" role="button" data-slide="next">
-                                                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                                  <span class="sr-only">Next</span>
-                                                                </a>
-                                                              </div>
-                                                              <br>
-                                                              {!! $p->description !!}
+                                                                <br>
+                                                                {!! $p->description !!}
                                                             </div>
                                                         </div>
                                                     </div>
@@ -387,7 +404,8 @@
                                             </h5>
                                         </div>
                                         <div>
-                                            <form action="{{ route('storeMessage') }}" method="post" role="form" id="messageForm">
+                                            <form action="{{ route('storeMessage') }}" method="post" role="form"
+                                                id="messageForm">
                                                 @csrf
                                                 <div class="row">
                                                     <div class="col-md-12 mb-3">
@@ -411,7 +429,8 @@
                                                     <div class="col-md-12 mb-3">
                                                         <div class="form-group">
                                                             <textarea class="form-control" name="message" rows="5"
-                                                                placeholder="Message" id="messageForm" required></textarea>
+                                                                placeholder="Message" id="messageForm"
+                                                                required></textarea>
                                                         </div>
                                                     </div>
                                                     <div class="col-md-12 text-center">
@@ -434,7 +453,7 @@
                                                 Si vous avez des questions, n’hésitez pas à me contacter.
                                             </p>
                                             <p class="lead">
-                                                Je vous répondrai dans les plus brefs délais.
+                                                Promis, je vous répondrai à ma pause café !
                                             </p>
                                             <ul class="list-ico">
                                                 <li><span class="bi bi-geo-alt"></span> 21 route de Voiteur, 39210 Le
@@ -446,8 +465,12 @@
                                         <div class="socials">
                                             <ul>
                                                 <li><a href="https://www.linkedin.com/in/hugo-buffard-39992b187/"
-                                                        target="_blank"><span class="ico-circle"><i
-                                                                class="bi bi-linkedin"></i></span></a></li>
+                                                        target="_blank">
+                                                        <span class="ico-circle">
+                                                            <i class="fab fa-linkedin" style="margin-top:10px;"></i>
+                                                        </span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -513,4 +536,5 @@
     <script src="{{ asset('front/assets/js/ajax.js') }}"></script>
 
 </body>
+
 </html>

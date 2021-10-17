@@ -10,9 +10,10 @@
   <title>Hugo BUFFARD</title>
 
 
-  <!-- Favicons -->
-  <link href="{{asset('front/assets/img/maintenance.gif')}}" rel="icon">
-  <link href="{{asset('front/assets/img/maintenance.gif')}}" rel="apple-touch-icon">
+     <!-- Favicons -->
+     <link href="{{ asset('front/assets/img/logo HB_noir.png') }}" rel="icon">
+     <link href="{{ asset('front/assets/img/logo HB_noir.png') }}" rel="apple-touch-icon">
+ 
 
   <!-- Vendor CSS Files -->
   <link href="{{asset('front/assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">

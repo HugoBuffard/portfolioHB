@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PortolioHB</title>
+    <title>Hugo BUFFARD</title>
 
-        <!-- Favicons -->
-        <link href="{{ asset('back/dist/img/logo HB_noir.png') }}" rel="icon">
-        <link href="{{ asset('back/dist/img/logo HB_noir.png') }}" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="{{ asset('back/dist/img/logo HB_noir.png') }}" rel="icon">
+    <link href="{{ asset('back/dist/img/logo HB_noir.png') }}" rel="apple-touch-icon">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -61,29 +61,34 @@
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
                         @if (App\Models\Message::where('traiter', false)->count() > 0)
-                        <span class="badge badge-warning navbar-badge">{{ App\Models\Message::where('traiter', false)->count() }}</span>
+                            <span
+                                class="badge badge-warning navbar-badge">{{ App\Models\Message::where('traiter', false)->count() }}</span>
                         @endif
                     </a>
                     @if (App\Models\Message::where('traiter', false)->count() > 0)
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2 )
-                            <i class="fas fa-envelope mr-2"></i> {{ App\Models\Message::where('traiter', false)->count() }} message non traité.
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                            <a href="#" class="dropdown-item">
+                                @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2)
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    {{ App\Models\Message::where('traiter', false)->count() }} message non traité.
+                                @else
+                                    <i class="fas fa-envelope mr-2"></i>
+                                    {{ App\Models\Message::where('traiter', false)->count() }} messages non traités.
+                                @endif
+                            </a>
+                            @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2)
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir le
+                                    message</a>
                             @else
-                            <i class="fas fa-envelope mr-2"></i> {{ App\Models\Message::where('traiter', false)->count() }} messages non traités.
+                                <div class="dropdown-divider"></div>
+                                <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir
+                                    les messages</a>
                             @endif
-                        </a>
-                        @if (App\Models\Message::where('traiter', false)->count() > 0 && App\Models\Message::where('traiter', false)->count() < 2 )
-                        <div class="dropdown-divider"></div>
-                        <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir le message</a>
-                        @else
-                        <div class="dropdown-divider"></div>
-                        <a href="{{ route('messages.index') }}" class="dropdown-item dropdown-footer">Voir les messages</a>
-                        @endif
-                    </div>
+                        </div>
                     @endif
                 </li>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}">
                         <i class="fas fa-sign-out-alt"></i>
@@ -97,9 +102,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ route('back') }}" class="brand-link">
-                <img src="{{ asset('back/dist/img/logo HB_blanc.png') }}" alt="logo"
-                    class="brand-image" style="opacity: .8">
-                <span class="brand-text font-weight-light">Back-office</span>
+                <img src="{{ asset('back/dist/img/logo HB_blanc.png') }}" alt="logo" class="brand-image"
+                    style="opacity: .8">
+                <span class="brand-text font-weight-light"></span>
             </a>
 
             <!-- Sidebar -->
@@ -175,14 +180,14 @@
             <!-- /.content-header -->
 
             @yield('content')
-    </div>
-    <!-- /.content-wrapper -->
+        </div>
+        <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
